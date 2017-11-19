@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+    <style>
+      html {
+        background: black;
+        min-width: 1000px;
+      }
+
+      /* the canvas *must not* have any border or padding, or mouse coords will be wrong */
+      canvas {
+        border: 0px none;
+        background-color: black;
+        float: left;
+      }
+
+      #output {
+        width: 400px;
+        height: 200px;
+        margin: 0 0 0 10px;
+        padding: 0;
+        border: none;
+        display: block;
+        background-color: black;
+        color: white;
+        font-family: 'Lucida Console', Monaco, monospace;
+        outline: none;
+        float: left;
+        font-size: 12px;
+        white-space: pre-wrap;
+      }
+
+      a, a:visited, a:active {
+        color: #F93;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas class="" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+    <div id="output"></div>
+
+    <script type='text/javascript'>
+      var Module = {
+        canvas: (function() {
+          return document.getElementById('canvas');
+        })(),
+        print: (function() {
+          var element = document.getElementById('output');
+          return function(text) {
+            if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
+            // These replacements are necessary if you render to raw HTML
+            // text = text.replace(/&/g, "&amp;");
+            // text = text.replace(/</g, "&lt;");
+            // text = text.replace(/>/g, "&gt;");
+            // text = text.replace('\n', '<br>', 'g');
+            console.log(text);
+            if (element) {
+              element.innerHTML += text + "\n";
+            }
+          };
+        })(),
+      };
+    </script>
+    <script async type="text/javascript" src="index.js"></script>
+  </body>
+</html>
+
