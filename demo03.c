@@ -362,7 +362,8 @@ int main ( int argc, char ** argv )
   // printf ( "  Quit by pressing the 'q' key\n" );
 
   printf ( "\n“A Simple Fluid Solver Based on the FFT”, Jos Stam.\n\n");
-  printf ( "Adapted for the browser using Emscripten and WebAssembly by <a href='http://janpaulposma.nl'>Jan Paul Posma</a>.\n");
+  printf ( "Adapted for the browser using Emscripten and WebAssembly by <a href='http://janpaulposma.nl'>Jan Paul Posma</a>");
+  printf ( " (code on <a href='https://github.com/janpaul123/fluid-solver-wasm'>Github</a>).\n");
 
   dvel = 0;
 
